@@ -628,6 +628,9 @@ class counting_iterator {
   mutable T blackhole_;
 
  public:
+  using iterator_category = std::output_iterator_tag;
+  using value_type = T;
+
   explicit counting_iterator(std::size_t &count): count_(count) {}
   counting_iterator(const counting_iterator &other): count_(other.count_) {}
 
